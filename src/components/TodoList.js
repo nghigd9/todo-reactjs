@@ -7,7 +7,7 @@ export default function TodoList(props) {
     return(
         <>
            {
-             todoList.map(todo => <TodoItem key={todo.id} todo={todo} onCheckBtnClick= {onCheckBtnClick}/>)
+             todoList.map(todo => <TodoItem key={todo.id} todo={todo} onCheckBtnClick= {() => onCheckBtnClick(todo.id)}/>)
            }
         </>
     )

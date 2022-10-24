@@ -1,7 +1,6 @@
 import './App.css';
 import TextField from '@atlaskit/textfield';
 import Button from "@atlaskit/button";
-import Icon from '@atlaskit/icon';
 import { useState, useCallback } from 'react';
 import TodoList from './components/TodoList';
 import {v4} from 'uuid';
@@ -10,7 +9,7 @@ function App() {
   const [todoList, setTodoList] = useState([]);
   const [textInput, setTextInput]  = useState("");
   const onAddButtonClick = useCallback( (e) => {
-    if (textInput == "") {
+    if (textInput === "") {
       alert("todo empty!");
       return;
     }
@@ -23,11 +22,11 @@ function App() {
 
   const onTextInputChange = useCallback((e) => {
     setTextInput(e.target.value);
-  }, [textInput]);
+  }, []);
 
-  const onCheckBtnClick = useCallback((id) => {
+  const onCheckBtnClick = useCallback( (id) => {
     setTodoList((prevState) => prevState.map(todo => todo.id === id ? {...todo, isCompleted : true} : todo));
-  }, [])
+  }, []);
   
   return (
     <div className="App">
